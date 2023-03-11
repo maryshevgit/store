@@ -2,8 +2,7 @@ interface MainPageProps {
     className?: string
 }
 
-const MainPage = ({className}: MainPageProps) => {
-
+const MainPage = ({ className }: MainPageProps) => {
     return (
         <div>
             dasdas
@@ -11,4 +10,4 @@ const MainPage = ({className}: MainPageProps) => {
     );
 };
 
-export default MainPage
+export default MainPage;

@@ -1,3 +1,5 @@
+@import "colors";
+
 :root {
 	--font-family-main: "GTEestiPro",arial,sans-serif;
 
@@ -8,4 +10,5 @@
 	--font-size-l: 24px;
 	--font-line-l: 32px;
 	--font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
+	--padding-default: 4px 28px;
 }

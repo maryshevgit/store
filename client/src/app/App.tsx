@@ -1,20 +1,21 @@
-import { Suspense } from "react";
-import {Route, Routes} from "react-router-dom";
-import {MainPageAsync} from "../pages/MainPage/MainPage.async";
-import './styles/index.scss'
+import { Suspense } from 'react';
+import './styles/index.scss';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { Header } from 'widgets/Header';
+import { useTheme } from './providers/ThemeProvider';
+import { AppRouter } from './providers/router';
 
-interface AppProps {
-    className?: string
-}
+function App() {
+    const { theme, toggleTheme } = useTheme();
 
-export const App = ({className}: AppProps) => {
     return (
-        <div className={'app'}>
+        <div className={classNames('app', {}, [theme])}>
             <Suspense fallback={<div>loading..</div>}>
-                <Routes>
-                    <Route path={'/'} element={<MainPageAsync />} />
-                </Routes>
+                <Header />
+                <AppRouter />
             </Suspense>
         </div>
     );
-};
+}
+
+export default App;
